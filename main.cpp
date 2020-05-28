@@ -18,14 +18,14 @@ int Vec2Int(vector<int> & seq){
 int CompStatus(int p1l, int p1r, int p2l, int p2r){
 	return p1l * 1000 + p1r * 100 + p2l * 10 + p2r;
 }
-void go(int toPick, vector<int> & pick){
+void FindAllStatus(int toPick, vector<int> & pick){
 	if(toPick == 0){
 		seq.push_back(pick);
 		return;
 	}
 	for(int i = 0; i<5; ++i){
 		pick.push_back(i);
-		go(toPick - 1, pick);
+		FindAllStatus(toPick - 1, pick);
 		pick.pop_back();
 	}
 }
@@ -202,7 +202,7 @@ void Preprocess(){
 	memset(adj, 0x3f, sizeof(adj));
 	vector<int> tmp;
 
-	go(4, tmp);	//Get all status
+	FindAllStatus(4, tmp);	//Get all status
 	sort(seq.begin(), seq.end());	//Sort status increasing order
 	for(auto i : seq)	//Make status to integer
 		comp.push_back(Vec2Int(i));
