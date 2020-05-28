@@ -5,7 +5,7 @@
 # 2020.05.27
 - Make first cpp file
 - Write "FindAllStatus" function
- - Find all status with brute forces
+  - Find all status with brute forces
 - Write "Vec2Int" function
  - Make the state represented by the vector an integer
 - Write "CompStatus" function
