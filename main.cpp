@@ -221,15 +221,10 @@ void Preprocess(){
 					++count;
 	CalcShortestPath();
 	
-//	for(auto i : terminalSymbol)
-//		printf("%04d\n", i);
-//	PrintAdj();
 }	
 int main(){
 	int cnt = 0;
 	clock_t st = clock();
 	Preprocess();
-	//printf("%lldms", (clock() - st) / 1000);
-	for(int i = 0; i<terminalSymbol.size(); ++i)
-		printf("%d\n", adj[comp2idx[1111]][terminalSymbol[i]]);
+	printf("%lldms", (clock() - st) / 1000);
 }
